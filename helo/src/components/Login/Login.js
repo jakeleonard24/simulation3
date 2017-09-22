@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
+import './Login.css'
 
 
 class Login extends Component {
 
     render() {
         return (
-            <div>
-                <Link to="/dashboard">
-                 <a href={process.env.REACT_APP_LOGIN}><button>Login /Register</button></a>
-                </Link>
+            <div className='flexbox'>
+                <div className='login-box'>
+                    
+                    <a href={'http://localhost:3535/auth' }><button>Login /Register</button></a>
+                    
+                </div>
             </div>
         );
     }

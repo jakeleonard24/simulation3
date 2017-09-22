@@ -4,12 +4,25 @@ import {Link} from 'react-router-dom';
 class Profile extends Component {
     constructor(){
         super()
+
+        this.state = {
+            username:'',
+            firstName: '',
+            lastName:'',
+            gender:'',
+            hairColor: '',
+            eyeColor: '',
+            hobby: '',
+            birthdayDay: '',
+            birthdayMonth:'',
+            birthdayYear:''
+        }
     }
 
     render() {
         return (
             <div>
-                <Link to='/dashboard'>
+                {/* <Link to='/dashboard'>
                 <div>HELO</div>
                 </Link>
                 <Link to='/search'>
@@ -18,40 +31,52 @@ class Profile extends Component {
                      <p>Profile</p>
                 <Link to='/'>
                     <div>logout</div>
-                </Link>
+                </Link> */}
+
+                <div className='navbar' >
+                    <ul className='flexbox-nav' >
+                    <Link to='/dashboard'>
+                     <li><div>HELO</div></li>
+                     </Link>
+                     <li>Home</li>
+                    <li><Link to='/search'><img />Search</Link></li>
+                     <li><p>Profile</p></li>
+                    <li><Link to='/'><div>logout</div></Link></li>
+                    </ul>
+                </div>
                 
                 <br></br>
-                <input placeholder="first name"></input>
-                <input placeholder="last name"></input>
+                <input onChange={(e) => this.setState({firstName: e.target.value})} placeholder="first name"></input>
+                <input onChange={(e) => this.setState({lastName: e.target.value})} placeholder="last name"></input>
                 <br></br>
                 <select>
                 <option value="" disabled selected>Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <option onClick={()=> {this.setState({gender:"Male"})}} value="Male">Male</option>
+                    <option onClick={()=> {this.setState({gender:"Female"})}} value="Female">Female</option>
                 </select>
 
                 <select>
                 <option value="" disabled selected>Hair Color</option>
-                    <option value="Brown">Brown</option>
-                    <option value="Black">Black</option>
-                    <option value="Blonde">Blonde</option>
-                    <option value="Red">Red</option>
+                    <option onClick={()=> {this.setState({hairColor:"Brown"})}} value="Brown">Brown</option>
+                    <option onClick={()=> {this.setState({hairColor:"Black"})}} value="Black">Black</option>
+                    <option onClick={()=> {this.setState({hairColor:"Blonde"})}} value="Blonde">Blonde</option>
+                    <option onClick={()=> {this.setState({hairColor:"Red"})}} value="Red">Red</option>
                 </select>
 
                 <select>
                 <option value="" disabled selected>Eye Color</option>
-                    <option value="Brown">Brown</option>
-                    <option value="Black">Black</option>
-                    <option value="Blue">Blue</option>
-                    <option value="Green">Green</option>
+                    <option onClick={()=> {this.setState({eyeColor:"Brown"})}} value="Brown">Brown</option>
+                    <option onClick={()=> {this.setState({hairColor:"Black"})}} value="Black">Black</option>
+                    <option onClick={()=> {this.setState({hairColor:"Blue"})}} value="Blue">Blue</option>
+                    <option onClick={()=> {this.setState({hairColor:"Green"})}} value="Green">Green</option>
                 </select>
 
                 <select>
                 <option value="" disabled selected>Hobby</option>
-                    <option value="Sports">Sports</option>
-                    <option value="Video Games">Video Games</option>
-                    <option value="Pets">Pets</option>
-                    <option value="Reading">Reading</option>
+                    <option onClick={()=> {this.setState({hobby:"Sports"})}} value="Sports">Sports</option>
+                    <option onClick={()=> {this.setState({hobby:"Video Games"})}} value="Video Games">Video Games</option>
+                    <option onClick={()=> {this.setState({hobby:"Pets"})}} value="Pets">Pets</option>
+                    <option onClick={()=> {this.setState({hobby:"Reading"})}} value="Reading">Reading</option>
                 </select>
 
                 <select>
