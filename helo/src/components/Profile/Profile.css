@@ -24,3 +24,55 @@ body {
     align-items: center;
     align-content: stretch;
 }
+
+.user {
+    box-shadow: 0 10px 20px 0
+    rgba(0, 0, 0, 0.1), 0 6px 6px 0
+    rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    padding: 10px;
+}
+
+.scrollboxes {
+    box-shadow: 0 10px 20px 0
+    rgba(0, 0, 0, 0.1), 0 6px 6px 0
+    rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    align-content: center;
+}
+
+.robo-border {
+    border: 3px solid #ff9770 ;
+    height: 100px;
+    width: 100px;
+}
+.update-button {
+    border-radius: 1px;
+    background-image: radial-gradient(circle at 50%-46%,
+    #737373 ,
+    #403d39 );
+    box-shadow: 0 1px 3px 0
+    rgba(0, 0, 0, 0.1),
+    0 1px 2px 0
+    rgba(0, 0, 0, 0.2);
+    height: 40px;
+    width: 100px;
+    margin: 10px;
+    color: white;
+}
+.cancel-button {
+    border-radius: 1px;
+    background-image: radial-gradient(circle at 50% 0,
+    #ffffff ,
+    #f1eceb );
+    border: solid 1px #ccc3c3 ;
+    height: 40px;
+    width: 100px;
+    margin: 10px;
+}

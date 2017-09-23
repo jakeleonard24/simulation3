@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+import me from '../../me.png'
+import './Profile.css'
 
 class Profile extends Component {
     constructor(){
@@ -17,6 +20,14 @@ class Profile extends Component {
             birthdayMonth:'',
             birthdayYear:''
         }
+    }
+    componentDidMount(){
+        axios.get('http://localhost:3535/api/user').then(response => {
+            this.setState({
+                username: response.data.email
+            })
+            
+        })
     }
 
     render() {
@@ -39,12 +50,21 @@ class Profile extends Component {
                      <li><div>HELO</div></li>
                      </Link>
                      <li>Home</li>
-                    <li><Link to='/search'><img />Search</Link></li>
+                    <li><Link to='/search'>Search</Link></li>
                      <li><p>Profile</p></li>
                     <li><Link to='/'><div>logout</div></Link></li>
                     </ul>
                 </div>
-                
+
+                <div className='user'><img className='robo-border' src={me} />
+                <p>{this.state.firstName + ' ' + this.state.lastName}</p>
+                    <a><button className='update-button'>Update</button></a>
+                    <a><button className='cancel-button'>Cancel</button></a>
+                </div>
+
+                <div className="scrollboxes">
+
+           
                 <br></br>
                 <input onChange={(e) => this.setState({firstName: e.target.value})} placeholder="first name"></input>
                 <input onChange={(e) => this.setState({lastName: e.target.value})} placeholder="last name"></input>
@@ -56,7 +76,7 @@ class Profile extends Component {
                 </select>
 
                 <select>
-                <option value="" disabled selected>Hair Color</option>
+                    <option value="" disabled selected>Hair Color</option>
                     <option onClick={()=> {this.setState({hairColor:"Brown"})}} value="Brown">Brown</option>
                     <option onClick={()=> {this.setState({hairColor:"Black"})}} value="Black">Black</option>
                     <option onClick={()=> {this.setState({hairColor:"Blonde"})}} value="Blonde">Blonde</option>
@@ -167,6 +187,7 @@ class Profile extends Component {
                     <option value="2002">2002</option>
                     <option value="2003">2003</option>
                 </select>
+                </div>
 
             </div>
         );

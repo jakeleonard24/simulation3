@@ -8,12 +8,15 @@ class Login extends Component {
 
     render() {
         return (
+            <div className="body">
+
             <div className='flexbox'>
                 <div className='login-box'>
                     
                     <a href={'http://localhost:3535/auth' }><button>Login /Register</button></a>
                     
                 </div>
+            </div>
             </div>
         );
     }

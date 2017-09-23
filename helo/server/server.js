@@ -68,6 +68,16 @@ passport.use( new Auth0Strategy({
             res.status(200).send(friends);
         }).catch((err) => {console.log(err)})
     })
+
+    app.get('/api/user', (req, res) => {
+        req.app.get('db').current_user().then(user =>{
+            res.status(200).send(user)
+        }).catch((err) => {console.log(err)})
+    })
+
+    // app.update('/api/user', (req, res) => {
+    //     let {}
+    // })
     
 
 const port = 3535;

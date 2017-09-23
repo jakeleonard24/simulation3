@@ -24,3 +24,61 @@ body {
     align-items: center;
     align-content: stretch;
 }
+.outerfriend {
+    box-shadow: 0 10px 20px 0
+    rgba(0, 0, 0, 0.1), 0 6px 6px 0
+    rgba(0, 0, 0, 0.2);
+}
+.innerfriends {
+    box-shadow: 0 10px 20px 0
+    rgba(0, 0, 0, 0.1), 0 6px 6px 0
+    rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px;
+    height: 100px;
+    width: 40%;
+    display: inline-block;
+   
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+}
+.welcome-message {
+    box-shadow: 0 10px 20px 0
+    rgba(0, 0, 0, 0.1), 0 6px 6px 0
+    rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    padding: 10px;
+}
+.my-info {
+    box-shadow: 0 10px 20px 0
+    rgba(0, 0, 0, 0.1), 0 6px 6px 0
+    rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    padding: 10px;
+}
+.outer-box-welcome {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+}
+.cancel-button {
+    border-radius: 1px;
+    background-image: radial-gradient(circle at 50% 0,
+    #ffffff ,
+    #f1eceb );
+    border: solid 1px #ccc3c3 ;
+    height: 40px;
+    width: 100px;
+    margin: 10px;
+}
